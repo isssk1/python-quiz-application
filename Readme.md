@@ -26,9 +26,9 @@ The application presents multiple-choice questions to the user, validates input,
 
 ## Files in This Repository
 
-├── quiz_app.py          # Main Python quiz application
-├── README.md            # Project documentation
-└── test_cases.md        # Manual test cases (TC01–TC10)
+- quiz_app.py         
+- README.md            
+- test_cases.md       
 ---
 
 ## How to Run the Program
