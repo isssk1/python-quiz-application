@@ -2,11 +2,6 @@
 COM4402 - Programming
 A2: Implementation
 
-Python Quiz Application
-• Handles all edge cases
-• Passes TC01 – TC10
-• User-friendly & beginner readable
-
 Author: Issa Khan
 Number: 2421170
 """
