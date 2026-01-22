@@ -7,23 +7,11 @@ Python Quiz Application
 • Passes TC01 – TC10
 • User-friendly & beginner readable
 
-Author: <Your Name>
-Student Number: <Your Student Number>
+Author: Issa Khan
+Number: 2421170
 """
 
-
-# -------------------------------------------------
-# Function: Load all quiz questions
-# -------------------------------------------------
 def load_questions():
-    """
-    Returns a list of quiz questions.
-    Each question contains:
-    - question text
-    - four options
-    - correct answer (as string number)
-    """
-
     return [
         {
             "question": "What is the correct file extension for Python files?",
@@ -108,62 +96,43 @@ def load_questions():
     ]
 
 
-# -------------------------------------------------
-# Function: Ask a single question safely
-# -------------------------------------------------
 def ask_question(question_data):
-    """
-    Displays a question and keeps asking
-    until the user provides valid input.
-    Returns True if the answer is correct.
-    """
-
     print("\n" + question_data["question"])
 
-    # Display all answer options
-    for option in question_data["options"]:
+
+    for option in question_data["options"]:                   # Display all answer options
         print(option)
 
-    # Keep looping until valid input is entered
+ 
     while True:
-        user_input = input("Enter your answer (1-4): ").strip()
+        user_input = input("Enter your answer (1-4): ").strip()                 # Keep looping until valid input is entered
 
-        # Handle invalid inputs (letters, symbols, empty input)
-        if not user_input.isdigit():
+
+        if not user_input.isdigit():                                                                 # Handle invalid inputs (letters, symbols, empty input)
             print("Invalid input. Please enter a number between 1 and 4.")
             continue
 
-        # Handle numbers outside valid range
-        if user_input not in {"1", "2", "3", "4"}:
+
+        if user_input not in {"1", "2", "3", "4"}:                                                                    # Handle numbers outside valid range
             print("Invalid input. Please enter a number between 1 and 4.")
             continue
 
-        # Input is valid → exit loop
-        break
 
-    # Check answer
+        break                                                                                                                         # Input is valid → exit loop
+
+   
     if user_input == question_data["answer"]:
-        print("Correct!")
+        print("Correct!")                                                                                                                            # Check answer
         return True
     else:
         print("Incorrect.")
         return False
 
 
-# -------------------------------------------------
-# Function: Control quiz flow and scoring
-# -------------------------------------------------
 def run_quiz():
-    """
-    Main controller for the quiz:
-    - Displays welcome message
-    - Tracks score
-    - Shows final result
-    """
 
-    # TC01: Quiz starts normally
     print("Welcome to the Python Quiz!")
-    print("Answer the questions by entering a number from 1 to 4.")
+    print("Answer the questions by entering a number from 1 to 4.")                           # TC01: Quiz starts normally
 
     score = 0
     questions = load_questions()
@@ -180,9 +149,5 @@ def run_quiz():
     print("\nQuiz Completed!")
     print(f"Your final score is: {score} out of {total_questions}")
 
-
-# -------------------------------------------------
-# Program Entry Point
-# -------------------------------------------------
 if __name__ == "__main__":
     run_quiz()
